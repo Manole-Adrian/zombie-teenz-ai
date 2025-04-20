@@ -183,7 +183,6 @@ class ZteenzEnv(gym.Env):
 
         terminated = np.all(np.array(self.covered_locations) == 1) or won
         truncated = self.step_count >= self.max_steps
-
         return {
             "crate_locations": self.crate_locations.copy(),
             "current_locations": self.current_city.copy(),
