@@ -1,9 +1,9 @@
 from stable_baselines3 import PPO
-from environments.pandemic_env import PandemicEnv
+from environments.zteenz_env import ZteenzEnv
 
 def run_trained_agent():
-    env = PandemicEnv()
-    model = PPO.load("models/pandemic_ppo")
+    env = ZteenzEnv()
+    model = PPO.load("models/zteenz_ppo")
 
     obs, info = env.reset()
     done = False

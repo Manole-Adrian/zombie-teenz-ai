@@ -1,19 +1,19 @@
 from stable_baselines3 import PPO
-from environments.pandemic_env import PandemicEnv
+from environments.zteenz_env import ZteenzEnv
 import os
 
 
 def continue_train():
-    env = PandemicEnv()
-    model = PPO.load("models/pandemic_ppo", env=None)
+    env = ZteenzEnv()
+    model = PPO.load("models/zteenz_ppo", env=None)
     model.set_env(env)
 
-    total_timesteps = 500_000
+    total_timesteps = 1_000_000
     model.learn(total_timesteps=total_timesteps)
 
     # Save the model after training
     os.makedirs("models", exist_ok=True)
-    model.save("models/pandemic_ppo")
+    model.save("models/zteenz_ppo")
     print("✅ Model saved to /models")
 
     return env, model

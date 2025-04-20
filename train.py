@@ -1,10 +1,10 @@
 from stable_baselines3 import PPO
-from environments.pandemic_env import PandemicEnv
+from environments.zteenz_env import ZteenzEnv
 import os
 
 
 def train():
-    env = PandemicEnv()
+    env = ZteenzEnv()
     model = PPO("MultiInputPolicy", env, verbose=1, tensorboard_log="./logs/", learning_rate=0.0006)
 
     total_timesteps = 500_000
@@ -12,7 +12,7 @@ def train():
 
     # Save the model after training
     os.makedirs("models", exist_ok=True)
-    model.save("models/pandemic_ppo")
+    model.save("models/zteenz_ppo")
     print("✅ Model saved to /models")
 
     return env, model

@@ -1,6 +1,6 @@
-from environments.pandemic_env import PandemicEnv
+from environments.zteenz_env import ZteenzEnv
 
-env = PandemicEnv()
+env = ZteenzEnv()
 obs, info = env.reset()
 done = False
 
